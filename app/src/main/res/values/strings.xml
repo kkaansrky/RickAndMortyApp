@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">RickAndMortyApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="gender_spinner">
+        <item>All</item>
+        <item>Female</item>
+        <item>Male</item>
+        <item>Genderless</item>
+        <item>Unknown</item>
+    </string-array>
+
+    <string-array name="status_spinner">
+        <item>All</item>
+        <item>Alive</item>
+        <item>Dead</item>
+        <item>Unknown</item>
+    </string-array>
+</resources>
