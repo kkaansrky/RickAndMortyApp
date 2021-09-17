@@ -17,9 +17,8 @@ interface ApiService {
     @GET("character")
     suspend fun getAllCharacters(
         @Query("name") characterName: String?,
-        @Query("status") characterStatus:String?,
-        @Query("gender") characterGender:String?,
-        @Query("species") characterSpecies:String?,
-        @Query("type") characterType:String?
+        @Query("status") characterStatus: String?,
+        @Query("gender") characterGender: String?,
+        @Query("page") page: Int?
     ): Response<CharacterListResponse>
 }

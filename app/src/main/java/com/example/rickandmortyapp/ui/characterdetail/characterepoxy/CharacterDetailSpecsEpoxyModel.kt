@@ -1,9 +1,11 @@
 package com.example.rickandmortyapp.ui.characterdetail.characterepoxy
 
+import com.airbnb.epoxy.EpoxyModelClass
 import com.example.rickandmortyapp.R
 import com.example.rickandmortyapp.databinding.ModelCharacterDetailSpecsBinding
 import com.example.rickandmortyapp.utils.ViewBindingEpoxyModel
 
+@EpoxyModelClass
 class CharacterDetailSpecsEpoxyModel(
     val origin: String,
     val species: String

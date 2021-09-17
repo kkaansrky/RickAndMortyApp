@@ -1,8 +1,6 @@
 package com.example.rickandmortyapp.ui.characterfilter
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,7 +8,6 @@ import android.widget.ArrayAdapter
 import com.example.rickandmortyapp.R
 import com.example.rickandmortyapp.databinding.FragmentCharacterFilterBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import java.util.*
 
 class CharacterFilterFragment(private val callback: ICharacterFilter) : BottomSheetDialogFragment() {
     private var _binding: FragmentCharacterFilterBinding? = null

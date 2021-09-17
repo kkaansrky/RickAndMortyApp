@@ -1,11 +1,12 @@
 package com.example.rickandmortyapp.ui.characterlist
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.cachedIn
 import com.example.rickandmortyapp.data.ApiRepository
-import com.example.rickandmortyapp.data.characterlist.CharacterListResponse
-import com.example.rickandmortyapp.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -15,13 +16,10 @@ class CharacterListViewModel @Inject constructor(
     private var apiRepository: ApiRepository
 ) : ViewModel() {
 
-    fun getAllCharacters(
-        characterName: String?,
-        characterStatus: String?,
-        characterGender: String?,
-        characterSpecies: String?,
-        characterType: String?
-    ): LiveData<Resource<CharacterListResponse>> {
-        return apiRepository.getAllCharacters(characterName,characterStatus,characterGender,characterSpecies,characterType)
-    }
+    fun filterCharacters(name: String?,gender:String?,status:String?) = Pager(
+        PagingConfig(20, 40, enablePlaceholders = false)
+    ) {
+        CharacterListPagingSource(apiRepository,name,gender,status)
+    }.flow
+        .cachedIn(viewModelScope)
 }

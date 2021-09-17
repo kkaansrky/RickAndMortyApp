@@ -17,11 +17,6 @@ class CharacterDetailEpoxyController : EpoxyController() {
         }
 
     override fun buildModels() {
-        if (character == null) {
-            // todo error state
-            return
-        }
-
         CharacterDetailImageEpoxyModel(
             character!!.image
         ).id("image").addTo(this)

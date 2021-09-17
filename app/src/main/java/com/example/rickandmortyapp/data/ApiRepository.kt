@@ -7,19 +7,20 @@ import javax.inject.Inject
 class ApiRepository @Inject constructor(
     private var remoteDataSource: RemoteDataSource
 ) {
-    fun getCharacterById(characterId :Int) =
+    fun getCharacterById(characterId: Int) =
         performNetworkOperation {
             remoteDataSource.getCharacterById(characterId)
         }
 
-    fun getAllCharacters(
+    suspend fun getAllCharacters(
         characterName: String?,
         characterStatus: String?,
         characterGender: String?,
-        characterSpecies: String?,
-        characterType: String?
-    ) =
-        performNetworkOperation {
-            remoteDataSource.getAllCharacters(characterName,characterStatus,characterGender,characterSpecies,characterType)
-        }
+        page: Int?
+    ) = remoteDataSource.getAllCharacters(
+        characterName,
+        characterStatus,
+        characterGender,
+        page
+    )
 }
