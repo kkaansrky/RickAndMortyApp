@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
-    app:startDestination="@id/charactersListFragment">
+    app:startDestination="@id/splashFragment">
     <fragment
         android:id="@+id/characterDetailFragment"
         android:name="com.example.rickandmortyapp.ui.characterdetail.CharacterDetailFragment"
@@ -20,8 +20,14 @@
         <action
             android:id="@+id/action_charactersListFragment_to_characterDetailFragment"
             app:destination="@id/characterDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.rickandmortyapp.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_charactersListFragment_self"
+            android:id="@+id/action_splashFragment_to_charactersListFragment"
             app:destination="@id/charactersListFragment" />
     </fragment>
 </navigation>
