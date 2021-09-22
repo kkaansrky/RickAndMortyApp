@@ -11,7 +11,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class CharacterDetailViewModel @Inject constructor(
-    var savedStateHandle: SavedStateHandle,
     private var apiRepository: ApiRepository
 ) : ViewModel() {
 
