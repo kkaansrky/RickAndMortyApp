@@ -14,7 +14,7 @@ fun <T> performNetworkOperation(call: suspend () -> Resource<T>): LiveData<Resou
         } else if (networkCall.status == Resource.Status.ERROR) {
             emit(
                 Resource.error(
-                    "Error: ${networkCall.message}"
+                    "Error: ${networkCall.status}"
                 )
             )
         }

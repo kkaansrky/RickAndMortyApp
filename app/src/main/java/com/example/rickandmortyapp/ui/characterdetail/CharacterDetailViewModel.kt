@@ -1,7 +1,6 @@
 package com.example.rickandmortyapp.ui.characterdetail
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.example.rickandmortyapp.data.ApiRepository
 import com.example.rickandmortyapp.data.character.CharacterResponse

@@ -1,26 +1,28 @@
 package com.example.rickandmortyapp.data.character
 
+import com.google.gson.annotations.SerializedName
+
 data class CharacterResponse(
-    val created: String,
-    val episode: List<Any>,
-    val gender: String,
-    val id: Int,
-    val image: String,
-    val location: Location,
-    val name: String,
-    val origin: Origin,
-    val species: String,
-    val status: String,
-    val type: String,
-    val url: String
+    @SerializedName("created") val created: String,
+    @SerializedName("episode") val episode: List<Any>,
+    @SerializedName("gender") val gender: String,
+    @SerializedName("id") val id: Int,
+    @SerializedName("image") val image: String,
+    @SerializedName("location") val location: Location,
+    @SerializedName("name") val name: String,
+    @SerializedName("origin") val origin: Origin,
+    @SerializedName("species") val species: String,
+    @SerializedName("status") val status: String,
+    @SerializedName("type") val type: String,
+    @SerializedName("url") val url: String
 )
 
 data class Location(
-    val name: String,
-    val url: String
+    @SerializedName("name") val name: String,
+    @SerializedName("url") val url: String
 )
 
 data class Origin(
-    val name: String,
-    val url: String
+    @SerializedName("name") val name: String,
+    @SerializedName("url") val url: String
 )
